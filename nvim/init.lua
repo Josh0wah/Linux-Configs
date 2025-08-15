@@ -237,6 +237,36 @@ require('lazy').setup({
   -- Josh's plugins
   --sitcom numbertoggle
   { 'sitiom/nvim-numbertoggle' },
+  -- m4xshen autoclose
+  {
+    'm4xshen/autoclose.nvim',
+    config = function()
+      require("autoclose").setup({
+        keys = {
+          ["("] = { escape = false, close = true, pair = "()" },
+          ["["] = { escape = false, close = true, pair = "[]" },
+          ["{"] = { escape = false, close = true, pair = "{}" },
+
+          [">"] = { escape = true, close = false, pair = "<>" },
+          [")"] = { escape = true, close = false, pair = "()" },
+          ["]"] = { escape = true, close = false, pair = "[]" },
+          ["}"] = { escape = true, close = false, pair = "{}" },
+
+          ['"'] = { escape = true, close = true, pair = '""' },
+          ["'"] = { escape = true, close = true, pair = "''" },
+          ["`"] = { escape = true, close = true, pair = "``" },
+        },
+
+        disabled_filetypes = { "text" },
+        disable_when_touch = false,
+        touch_regex = "[%w(%[{]",
+        pair_spaces = false,
+        auto_indent = true,
+        disable_command_mode = false,
+      })
+    end,
+  },
+
   --[[
   {
     'mluders/comfy-line-numbers.nvim',
@@ -740,7 +770,7 @@ require('lazy').setup({
 
       require('mason-lspconfig').setup {
         ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
-        automatic_installation = false,
+        automatic_installation = true,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
@@ -866,7 +896,7 @@ require('lazy').setup({
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
-          ['<C-y>'] = cmp.mapping.confirm { select = true },
+          ['<Tab>'] = cmp.mapping.confirm { select = true },
 
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
