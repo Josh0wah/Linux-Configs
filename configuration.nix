@@ -81,7 +81,6 @@
     ];
   };
 
-
   # nvidia BS
   # Enable OpenGL
   hardware.graphics = {
@@ -127,11 +126,15 @@
     git
     gcc
     gpp
+    wineWowPackages.waylandFull
+    networkmanagerapplet
+    pamixer
     neovim
     obsidian
     ghostty
     neofetch
     vesktop
+    steam
     hyprland
     waybar
     wine
@@ -140,7 +143,6 @@
     hyprshot
     xournalpp
     # spotify via flatpak install
-    # steam via flatpak install
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
