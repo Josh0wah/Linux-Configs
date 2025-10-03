@@ -106,15 +106,27 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Enable Hyprland
+  services.displayManager.defaultSession = "hyprland";
+  programs.hyprland.enable = true;
+
+  services.flatpak.enable = true;
+  systemd.services.flatpak-repo = {
+    wantedBy = [ "multi-user.target" ];
+    path = [ pkgs.flatpak ];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    '';
+  };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
     google-chrome
-    spotify
-    steam
     git
+    gcc
+    gpp
     neovim
     obsidian
     ghostty
@@ -127,6 +139,8 @@
     swaybg
     hyprshot
     xournalpp
+    # spotify via flatpak install
+    # steam via flatpak install
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
