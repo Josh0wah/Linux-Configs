@@ -110,6 +110,13 @@
   services.displayManager.defaultSession = "hyprland";
   programs.hyprland.enable = true;
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
+
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
     wantedBy = [ "multi-user.target" ];
@@ -118,16 +125,19 @@
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    # Install spotify with flatpak
     google-chrome
     git
     gcc
     gpp
+    lutris
+    wineWowPackages.stable
     wineWowPackages.waylandFull
+    winetricks
     networkmanagerapplet
     pamixer
     neovim
@@ -135,6 +145,7 @@
     ghostty
     neofetch
     vesktop
+    xdg-desktop-portal-gnome
     steam
     hyprland
     waybar
@@ -144,7 +155,6 @@
     hyprshot
     xournalpp
     guitarix
-    # spotify via flatpak install
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
