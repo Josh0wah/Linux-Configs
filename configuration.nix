@@ -143,7 +143,7 @@
     neovim
     obsidian
     ghostty
-    neofetch
+    freshfetch
     vesktop
     xdg-desktop-portal-gnome
     steam

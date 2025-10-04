@@ -116,6 +116,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export EDITOR=/nix/store/44jprv5j0a1xid5dnsd127rladpgmskb-system-path/bin/nvim
+export VISUAL=/nix/store/44jprv5j0a1xid5dnsd127rladpgmskb-system-path/bin/nvim
+
+
 export PATH="~/.cargo/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 
@@ -132,5 +136,5 @@ alias sunset="curl wttr.in\?format='%s\n'"
 alias z="cd"
 alias music="spotify_player"
 
-neofetch
-python .scripts/termVerse.py
+freshfetch
+#python .scripts/termVerse.py
