@@ -117,6 +117,8 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
+  programs.niri.enable = true;
+
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
     wantedBy = [ "multi-user.target" ];
@@ -134,18 +136,18 @@
     git
     gcc
     gpp
-    lutris
-    wineWowPackages.stable
-    wineWowPackages.waylandFull
-    winetricks
+    wineWowPackages.yabridge
     networkmanagerapplet
     pamixer
     neovim
     obsidian
     ghostty
+    alacritty
     freshfetch
     vesktop
     xdg-desktop-portal-gnome
+    xwayland
+    xwayland-satellite
     steam
     hyprland
     waybar
