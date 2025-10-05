@@ -118,7 +118,7 @@ fi
 
 export EDITOR=/nix/store/44jprv5j0a1xid5dnsd127rladpgmskb-system-path/bin/nvim
 export VISUAL=/nix/store/44jprv5j0a1xid5dnsd127rladpgmskb-system-path/bin/nvim
-
+export DISPLAY=:0
 
 export PATH="~/.cargo/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
