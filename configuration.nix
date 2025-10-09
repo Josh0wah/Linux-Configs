@@ -167,7 +167,7 @@
     alacritty
     freshfetch
     vesktop
-    xdg-desktop-portal-gnome
+    xdg-desktop-portal-gtk
     xwayland
     xwayland-satellite
     steam

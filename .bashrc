@@ -118,22 +118,19 @@ fi
 
 export EDITOR=/nix/store/44jprv5j0a1xid5dnsd127rladpgmskb-system-path/bin/nvim
 export VISUAL=/nix/store/44jprv5j0a1xid5dnsd127rladpgmskb-system-path/bin/nvim
-export DISPLAY=:0
+
 
 export PATH="~/.cargo/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 
 alias v="nvim"
+alias sv="sudoedit"
 alias brc="nvim ~/.bashrc"
 alias nvc="nvim ~/.config/nvim"
 alias hd="cd ~"
-alias tk="wine ~/.wine/drive_c/Program\ Files/Neural\ DSP/ Tone\ King\ Imperial\ MKII.exe"
-alias kys="poweroff"
-alias gimme="sudo pacman -S"
 alias wtr="curl wttr.in"
 alias sunrise="curl wttr.in\?format='%S\n'"
 alias sunset="curl wttr.in\?format='%s\n'"
-alias z="cd"
 alias music="spotify_player"
 
 freshfetch
