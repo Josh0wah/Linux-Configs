@@ -83,6 +83,7 @@ output "HDMI-A-1" {
 }
 output "DP-2" {
     focus-at-startup
+    position x=0 y=0
     mode "2560x1440@164.96"
 }
 
@@ -277,8 +278,8 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
-spawn-sh-at-startup "swaybg -i ~/Pictures/Wallpapers/boulder.jpeg"
+spawn-sh-at-startup "waybar"
+spawn-sh-at-startup "swaybg -i ~/Pictures/Wallpapers/cats.jpg"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -560,8 +561,8 @@ binds {
     // Mod+R { switch-preset-column-width-back; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
-    Mod+M { maximize-column; }
-    // Mod+Shift+F { fullscreen-window; }
+    Mod+Z { maximize-column; }
+    Mod+Alt+Z { fullscreen-window; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
