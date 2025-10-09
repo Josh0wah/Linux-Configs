@@ -140,6 +140,11 @@
 
   programs.niri.enable = true;
 
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
     wantedBy = [ "multi-user.target" ];
@@ -168,6 +173,7 @@
     freshfetch
     vesktop
     xdg-desktop-portal-gtk
+    xdg-desktop-portal-gnome
     xwayland
     xwayland-satellite
     steam
