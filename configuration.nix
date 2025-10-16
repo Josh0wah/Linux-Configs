@@ -9,6 +9,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./vm.nix
     ];
 
   # Bootloader.
@@ -77,7 +78,7 @@
   users.users.josh = {
     isNormalUser = true;
     description = "Josh Singleton";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
@@ -132,10 +133,23 @@
       wlrobs
       obs-backgroundremoval
       obs-pipewire-audio-capture
-      obs-vaapi #optional AMD hardware acceleration
       obs-gstreamer
       obs-vkcapture
     ];
+  };
+
+  virtualisation.docker = {
+    enable = true;
+    # Set up resource limits
+    daemon.settings = {
+      experimental = true;
+      default-address-pools = [
+        {
+          base = "172.30.0.0/16";
+          size = 24;
+        }
+      ];
+    };
   };
 
   programs.niri.enable = true;
@@ -163,6 +177,8 @@
     gcc
     gpp
     go
+    docker-compose
+    freerdp
     wineWowPackages.yabridge
     networkmanagerapplet
     pamixer
@@ -184,6 +200,7 @@
     swaybg
     hyprshot
     xournalpp
+    vlc
     guitarix
   ];
 
