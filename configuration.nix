@@ -187,7 +187,6 @@
     ghostty
     alacritty
     freshfetch
-    vesktop
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
     xwayland

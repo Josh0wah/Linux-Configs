@@ -376,7 +376,7 @@ binds {
     Mod+Q hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+Space hotkey-overlay-title="Run an Application: wofi" { spawn-sh "wofi --show drun"; }
     Mod+F { spawn "google-chrome-stable"; }
-    Mod+D { spawn "vesktop"; }
+    Mod+D { spawn-sh "flatpak run com.discordapp.Discord"; }
     Mod+E { spawn "dolphin"; }
     Mod+O { spawn "obsidian"; }
     Mod+S { spawn-sh "flatpak run com.spotify.Client"; }
