@@ -43,6 +43,7 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
+  #services.displayManager.ly.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
@@ -177,9 +178,10 @@
     gcc
     gpp
     go
+    cmake
     docker-compose
     freerdp
-    wineWowPackages.yabridge
+    wine
     networkmanagerapplet
     pamixer
     neovim
@@ -192,15 +194,16 @@
     xwayland
     xwayland-satellite
     steam
+    tidal-hifi
     hyprland
     waybar
-    wine
     wofi
     swaybg
     hyprshot
     xournalpp
     vlc
     guitarix
+    zoom
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
