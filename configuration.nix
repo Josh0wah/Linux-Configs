@@ -102,7 +102,6 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -163,6 +162,7 @@
     cmake
     docker-compose
     freerdp
+    jdk
     networkmanagerapplet
     pamixer
     neovim
@@ -179,6 +179,7 @@
     hyprland
     waybar
     wofi
+    wineWowPackages.stable
     swaybg
     hyprshot
     xournalpp
